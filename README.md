@@ -1,2 +1,2 @@
 # Hacker-Rank
-Self-study Hacker Rank challenges
+Self-study Hacker Rank challenges: https://www.hackerrank.com/qdttdev
