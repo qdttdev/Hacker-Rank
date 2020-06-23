@@ -4,3 +4,8 @@
 
 * Self-study Hacker Rank challenges: https://www.hackerrank.com/qdttdev
 * Handy Online C++ Compiler: https://www.onlinegdb.com/online_c++_compiler
+
+### Note to Self when approaching Algorithm Problems
+* Follow the question conditions closely (Between_Two_Sets)
+* Visualize the problem by drawing/ writing out how a solution is found (Diagonal_Difference)
+* Use Mathematics to manipulate the problem (Kangaroo)
