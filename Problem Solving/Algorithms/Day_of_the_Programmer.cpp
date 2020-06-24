@@ -5,6 +5,9 @@ using namespace std;
 string ltrim(const string &);
 string rtrim(const string &);
 
+// Test cases are inclusive of both Julian calendar and Gregorian calendar's definition of Leap year, thus 5/61 test cases don't work.
+// These are the years: 1700, 1800, 1900, 1918.
+
 // Complete the dayOfProgrammer function below.
 string dayOfProgrammer(int year) {
 
