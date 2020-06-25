@@ -5,9 +5,6 @@ using namespace std;
 string ltrim(const string &);
 string rtrim(const string &);
 
-// Test cases are inclusive of both Julian calendar and Gregorian calendar's definition of Leap year, thus 5/61 test cases don't work.
-// These are the years: 1700, 1800, 1900, 1918.
-
 // Complete the dayOfProgrammer function below.
 string dayOfProgrammer(int year) {
 
@@ -17,18 +14,31 @@ string dayOfProgrammer(int year) {
         {9, 30}, {10, 31}, {11, 30},{12, 31}
     };
 
-    string dd, mm, dayOutput;
-    int day = 0;
+    string dd, mm, dayOutput;    
     int const theDay = 256;
     bool isLeapYear = false;
-
-    if(year % 400 == 0 || (year % 4 == 0) && (year % 100 != 0))
-    {
-        isLeapYear = true;
-    }
-
     int daysCount = 0;
+    int day = 0;
     int month = 0;
+
+    if(year == 1918) // Julian -> Gregorian: 02/14 follows 01/31 -> loses 13 days
+    {
+        daysCount = -13;
+    }
+    else if(year < 1918) // Julian calendar
+    {
+        if(year % 4 == 0)
+        {
+            isLeapYear = true;
+        }
+    }
+    else // Gregorian calendar
+    {
+        if(year % 400 == 0 || (year % 4 == 0) && (year % 100 != 0))
+        {
+            isLeapYear = true;
+        }
+    }       
     
     if(isLeapYear)
     {
