@@ -15,7 +15,7 @@ string dayOfProgrammer(int year) {
     };
 
     string dd, mm, dayOutput;    
-    int const theDay = 256;
+    const int THE_DAY = 256;
     bool isLeapYear = false;
     int daysCount = 0;
     int day = 0;
@@ -45,20 +45,13 @@ string dayOfProgrammer(int year) {
         daysCount = 1;
     }
 
-    // cout << "Leap year: +" << daysCount << endl;
-
-    while(daysCount + daysOfMonth[month] < theDay)
+    while(daysCount + daysOfMonth[month] < THE_DAY)
     {
         daysCount += daysOfMonth[month];
         month++;
-
-        // cout << "#" << daysCount  
-        //      << "\tMonth = " << month << " (" << daysOfMonth[month] << ")"
-        //      << "\tLeftover = " << theDay - daysCount << endl;
     }
     
-    // cout << theDay-daysCount << " " << month << " " << year << endl;
-    day = theDay - daysCount;
+    day = THE_DAY - daysCount;
 
     if(day < 10)
     {
