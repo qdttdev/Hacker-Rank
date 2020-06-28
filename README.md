@@ -1,6 +1,6 @@
 # Hacker-Rank
 
-![HR_Badges_06_22_20](https://user-images.githubusercontent.com/56989578/85375124-b299eb00-b4ea-11ea-9401-a37293044621.jpg)
+![Annotation 2020-06-28 160442](https://user-images.githubusercontent.com/56989578/85960545-21e36500-b959-11ea-8d44-1923616e0c56.jpg)
 
 * Self-study Hacker Rank challenges: https://www.hackerrank.com/qdttdev
 * Handy Online C++ Compiler: https://www.onlinegdb.com/online_c++_compiler
