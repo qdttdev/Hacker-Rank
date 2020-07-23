@@ -4,63 +4,43 @@ using namespace std;
 
 vector<string> split_string(string);
 
-// 20 3 6 80
-
-// 20               C = 1
-// 20-3 = 17        C = 2
-// 17-3 = 14        C = 3
-// 14-3 = 11        C = 4
-// 11-3 = 8         C = 5
-// 8-3  = 5 --> 6   C = 6
-// SUM = $76 < 80
-
-// 1 100 1 9777 = 9777
-// 88 77 88 9912 = 112
-// 73 72 44 9163 = 207
-// 95 68 66 2249 = 33
-
 // Complete the howManyGames function below.
-int howManyGames(int initPrice, int discount, int minPrice, int spending) 
+int howManyGames(int p, // price 
+                 int d, // discount
+                 int m, // minimum
+                 int s) // spend amount available
 {
-    int sum = 0;
-    int games = 0;
-    int nextCost = initPrice - discount;
-    
-    sum = initPrice;
-    
-    if(sum > spending)
+    int game = 0;
+    int cost = 0;
+    int nextPrice = 0;
+
+    // First game:  cost      = first price
+    //              nextPrice = first price as base reference
+    cost = p;
+    nextPrice = p;
+
+    if(cost > s)
     {
         return 0;
     }
-    else
+    else 
     {
-        
-        if(discount > initPrice)
+        while(cost <= s)
         {
-            cout << spending;
-            return spending;
+            game++;
+            
+            nextPrice -= d;
+
+            if(nextPrice < m)
+            {
+                nextPrice = m;
+            }
+            
+            cost += nextPrice;
         }
-        
-        games++;
-        sum += nextCost;
     }
-    
-    while(sum <= spending)
-    {
-        nextCost -= discount;
-        
-        if(nextCost < minPrice)
-        {
-            nextCost = minPrice;
-        }
-        
-        sum += nextCost;
-        games++;
-        
-        cout << "S: " << sum << "\tG:" << games << endl;
-    }
-    
-    return games;
+
+    return game;
 }
 
 int main()
