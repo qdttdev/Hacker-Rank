@@ -18,31 +18,26 @@ vector<string> split(const string &);
  *  5. INTEGER z
  */
 
-long taumBday(int b, int w, int bc, int wc, int z) 
+long taumBday(long b, long w, long bc, long wc, long z) 
 {
-    long bb = b;
-    long ww = w;
-    long bbc = bc;
-    long wwc = wc;
-    long zz = z; 
     long cost = 0;
     long giftCount = 0;
     
-    if(bbc > wwc + zz) 
+    if(bc > wc + z) 
     {
-        giftCount = bb + ww;
-        cost = wwc * giftCount;
-        cost += bb * zz;
+        giftCount = b + w;
+        cost = wc * giftCount;
+        cost += b * z;
     }
-    else if(wwc > bbc + zz) 
+    else if(wc > bc + z) 
     {
-        giftCount = bb + ww;
-        cost = bbc * giftCount;
-        cost += ww * zz;
+        giftCount = b + w;
+        cost = bc * giftCount;
+        cost += w * z;
     }
     else 
     {    
-        cost = bb * bbc + ww * wwc; 
+        cost = b * bc + w * wc; 
     }
 
     return cost;
