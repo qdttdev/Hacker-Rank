@@ -20,24 +20,29 @@ vector<string> split(const string &);
 
 long taumBday(int b, int w, int bc, int wc, int z) 
 {
+    long bb = b;
+    long ww = w;
+    long bbc = bc;
+    long wwc = wc;
+    long zz = z; 
     long cost = 0;
-    int giftCount = 0;
+    long giftCount = 0;
     
-    if(bc > wc + z)  
+    if(bbc > wwc + zz) 
     {
-        giftCount = b + w;
-        cost = wc * giftCount;
-        cost += b * z;
+        giftCount = bb + ww;
+        cost = wwc * giftCount;
+        cost += bb * zz;
     }
-    else if(wc > bc + z) // If w costs more than b + c
+    else if(wwc > bbc + zz) 
     {
-        giftCount = b + w;
-        cost = bc * giftCount;
-        cost += w * z;
+        giftCount = bb + ww;
+        cost = bbc * giftCount;
+        cost += ww * zz;
     }
     else 
     {    
-        cost = b * bc + w * wc; // normal calculation   
+        cost = bb * bbc + ww * wwc; 
     }
 
     return cost;
