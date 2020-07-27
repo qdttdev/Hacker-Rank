@@ -2,6 +2,8 @@
 
 using namespace std;
 
+// PROBLEM: Cannot handle case "baab" where "bb" is not handled
+
 // Complete the superReducedString function below.
 string superReducedString(string s) 
 {
