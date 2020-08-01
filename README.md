@@ -14,7 +14,7 @@
 
 #### CLONING A REPOSITORY USING GIT CLONE
 1. Open [Git](https://git-scm.com/download/win) Bash
-2. Type ``` git clone ``` and paste the copied URL from your repository:
+2. Type ``` git clone ``` and paste the copied URL from your repository:    
 ``` git clone https://github.com/qdttdev/Hacker-Rank.git ```
 
 #### VERSION CONTROL
