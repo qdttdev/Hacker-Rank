@@ -2,6 +2,8 @@
 
 using namespace std;
 
+// FAILS 9/12 test cases, doesn't handle RRRR, BBB
+
 // Complete the happyLadybugs function below.
 string happyLadybugs(string b) 
 {
