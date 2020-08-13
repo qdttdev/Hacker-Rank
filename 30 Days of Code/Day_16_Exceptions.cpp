@@ -31,7 +31,7 @@ int main(){
     {
         cout << stoi(S);
     }
-    catch (exception e) 
+    catch (const invalid_argument &e) 
     {
         cout << "Bad String\n";
     }
