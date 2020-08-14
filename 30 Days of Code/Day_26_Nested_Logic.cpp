@@ -15,21 +15,27 @@ int main() {
     cin >> d >> m >> y;
     cin >> dd >> mm >> yy;
 
-    if(d <= dd && m <= mm && y <= yy)
-    {
-        fine = 0;
-    }
-    else if(d > dd && m == mm && y == yy)
-    {
-        fine = 15 * (d - dd);
-    }
-    else if(m > mm && y == yy)
-    {
-        fine = 500 * (m - mm);
-    }
-    else if(y > yy)
+    if(y > yy)
     {
         fine = 10000;
+    }
+    else if (y == yy) 
+    {
+        if(m > mm)
+        {
+            fine = 500 * (m - mm);
+        }
+        else if(m == mm)
+        {
+            if(d > dd)
+            {
+                fine = 15 * (d - dd);
+            }
+            else
+            {
+                fine = 0;
+            }
+        }
     }
 
     cout << fine;
