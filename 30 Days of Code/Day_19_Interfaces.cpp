@@ -14,31 +14,17 @@ class Calculator : public AdvancedArithmetic
 {
     private:
     public:
-        vector<int> findAllDivisor(int n)
+        int divisorSum(int n) 
         {
-            vector<int> divisors;
+            int sum = 0;
 
             for(int i = 1; i <= n; i++) // starts @ 1 because not divisible by 0
             {
                 if(n % i == 0) // if divisible
                 {
-                    divisors.push_back(i);
+                   sum += i;
                 }
             }
-
-            return divisors;
-        }
-
-        int divisorSum(int n) 
-        {
-            vector<int> divList = findAllDivisor(n);
-            int sum = 0;
-
-            for(int i = 0; i < divList.size(); i++)
-            {
-                sum += divList[i];
-            }
-
             return sum;
         }
 };
