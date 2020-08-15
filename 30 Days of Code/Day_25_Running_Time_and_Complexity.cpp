@@ -24,7 +24,9 @@ int main() {
         else 
         {
             int count = 0;
-
+            
+            // We only need to check for divisors up to the squareroot of n 
+            // to determine if the number is a prime number
             for(int j = 2; j <= sqrt(testInput); j++)
             {
                 if(testInput % j == 0)
