@@ -9,47 +9,33 @@ vector<string> split_string(string);
 // Complete the climbingLeaderboard function below.
 vector<int> climbingLeaderboard(vector<int> scores, vector<int> alice) 
 {
-    vector<int> aRank;
-    int rankVal;
-    int rankOrder;
+    vector<int> aRank; 
 
-    for(int i = 0; i < alice.size(); i++)
+    for(int i = 0; i < alice.size(); i++) // check each Alice's score
     {
-        vector<int> scoresDup(scores);
-        rankOrder = 1;
+        int rankOrder = 1;
 
-        scoresDup.push_back(alice[i]);
-        sort(scoresDup.begin(),scoresDup.end(),greater<int>());
-
-        // for(int i = 0; i < scoresDup.size(); i++)
-        // {
-        //     cout << scoresDup[i] << " ";
-        // }
-
-        rankVal = scoresDup[0];  
-
-        for(int j = 0; j < scoresDup.size()-1; j++)
+        for(int j = 0; j < scores.size(); j++) // check for score board
         {
-            // cout << "\nalice[i]  = " << alice[i] << endl;
-            // cout << "rankVal   = " << rankVal << endl;
-            // cout << "rankOrder = " << rankOrder << endl << endl;
-
-            if(alice[i] < rankVal)
+            if(alice[i] >= scores[j])
             {
-                rankVal = scoresDup[j+1];
-                if(scoresDup[j] > scoresDup[j+1])
-                {
-                    rankOrder++;
-                }                
-            }
-            else
-            {                
+                aRank.push_back(rankOrder);
                 break;
             }
-        } 
+            else 
+            {
+                if(scores[j] > scores[j+1])
+                {            
+                    rankOrder++;
+                }
+            }
 
-        aRank.push_back(rankOrder);   
-        cout << "PUSHING: " << rankOrder << endl;  
+            if(j == scores.size()-1)
+            {
+                rankOrder++;
+                aRank.push_back(rankOrder);
+            }           
+        }
     }
 
     return aRank;
