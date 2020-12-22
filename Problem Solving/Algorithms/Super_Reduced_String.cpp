@@ -2,39 +2,35 @@
 
 using namespace std;
 
-// PROBLEM: Cannot handle case "baab" where "bb" is not handled
-// TEST CASES FAILED: 11, 13, 14, 15
-
 // Complete the superReducedString function below.
 string superReducedString(string s) 
-{
-    string r = "";
-
-    for(int i = 0; i < s.length() - 1; i++)
+{    
+    int i = 0;
+    
+    // Loops through all elements of the string
+    while(i < s.length())
     {
+        // If two adjacent elements are the same, erase them
         if(s[i] == s[i+1])
         {
-            s[i] = '_';
-            s[i+1] = '_';
+            s.erase(s.begin()+i);
+            s.erase(s.begin()+i);
+            
+            // reset index because we have a new (erased) string (account for case "baab")
+            i = 0;
         }
-    }
-
-    for(int i = 0; i < s.length(); i++)
-    {
-        if(s[i] != '_')
+        else  // Else, increment to check the next element
         {
-            r += s[i];
+            i++;
         }
-
-        cout << "NEW STRING: " << r << endl;
     }
-
-    if(r[0] == r[1])
+    
+    if(s == "")
     {
-        r = "Empty String";
-    } 
-
-    return r;
+        s = "Empty String";
+    }
+    
+    return s;
 }
 
 int main()
